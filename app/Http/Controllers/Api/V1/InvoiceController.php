@@ -38,7 +38,7 @@ class InvoiceController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return new InvoiceResource(Invoice::with('user')->where('id', $id)->first());
     }
 
     /**
